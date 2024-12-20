@@ -1,11 +1,7 @@
 import numpy as np
 
 
-def t1(L):
-    a1 = np.array([1,2,3])
-    a2 = np.array([4,5,6])
-    a3 = np.array([7,8,9])
-    L = [np.array([1,2,3]), np.array([4,5,6]), np.array([7,8,9])]
+
 def t1(L):
     """
     Inputs:
@@ -23,7 +19,6 @@ def t1(L):
 
 
 def t2(X):
-    X = np.array([[1, 2, 3], [4, 5, 6], [7, 8, 9]])
     """
     Inputs:
     - X: A numpy array of shape (N, N)
@@ -40,7 +35,9 @@ def t2(X):
     2) np.argmin
     3) Watch rows and columns!
     """
-    return None
+    eigenvalues, eigenvectors = np.linalg.eig(X)  
+    min_index = np.argmin(eigenvalues)           
+    return eigenvectors[:, min_index]     
 
 
 def t3(X):
@@ -60,7 +57,9 @@ def t3(X):
     2) X[S] = v assigns the value v to all entires of X corresponding to
        true values of S.
     """
-    return None
+    X_copy = X.copy()        
+    X_copy[X_copy < 0] = 0   
+    return X_copy      
 
 
 def t4(R, X):
@@ -80,7 +79,7 @@ def t4(R, X):
        by the matrix R.
     2) .T gives the transpose of a matrix
     """
-    return None
+    return (R @ X.T).T
 
 
 def t5(X):
@@ -100,7 +99,7 @@ def t5(X):
        from rows y0 to (but not including!) y1
        from columns x0 (but not including!) x1
     """
-    return None
+    return X[:4, :4] - X[-4:, -4:]
 
 
 def t6(N):
@@ -115,7 +114,12 @@ def t6(N):
     Par: 6 lines
     Instructor: 3 lines
     """
-    return None
+    arr = np.ones((N, N))  
+    arr[:5, :] = 0         
+    arr[-5:, :] = 0       
+    arr[:, :5] = 0         
+    arr[:, -5:] = 0        
+    return arr
 
 
 def t7(X):
