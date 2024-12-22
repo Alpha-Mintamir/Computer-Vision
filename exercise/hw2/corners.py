@@ -25,7 +25,6 @@ def corner_score(image, u=5, v=5, window_size=(5, 5)):
     output = None
     return output
 
-
 def harris_detector(image, window_size=(5, 5)):
     """
     Given an input image, calculate the Harris Detector score for all pixels
@@ -67,7 +66,7 @@ def main():
     score = corner_score(img, u, v, W)
     save_img(score, "./feature_detection/corner_score.png")
 
-    # Computing the corner scores for various u, v values.
+  
     score = corner_score(img, 0, 5, W)
     save_img(score, "./feature_detection/corner_score05.png")
 
@@ -88,7 +87,5 @@ def main():
     # (b)
     harris_corners = harris_detector(img)
     save_img(harris_corners, "./feature_detection/harris_response.png")
-
-
 if __name__ == "__main__":
     main()
