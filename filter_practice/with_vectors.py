@@ -42,3 +42,16 @@ for row in result_matrix:
     print(row)
 
 
+def print_matrix(matrix):
+    for row in matrix:
+        print(" ".join(map(str, row)))
+
+# Example usage of the new function
+print("Original Matrix:")
+print_matrix(vector)
+
+print("\nPadded Matrix:")
+print_matrix(padded_vector)
+
+print("\nResult Matrix:")
+print_matrix(result_matrix)
