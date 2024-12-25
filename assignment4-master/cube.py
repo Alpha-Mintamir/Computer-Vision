@@ -12,7 +12,7 @@ scene = Scene([
     # Make a big sphere for the floor
     Sphere(vec([0,-40,0]), 39.5, gray),
 ] + [
-    # Make triangle objects from the vertex coordinates
+    # Make triangle objects from  vertex coordinates
     Triangle(vs, tan) for vs in vs_list
 ])
 
